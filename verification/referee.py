@@ -6,7 +6,7 @@ from checkio.referees import checkers
 
 from tests import TESTS
 
-BASE = 200
+BASE = 350
 
 
 class CheckioRefereeGolf(CheckiOReferee):
@@ -37,9 +37,12 @@ class CheckioRefereeGolf(CheckiOReferee):
             else:
                 code_len = len(self.code)
                 print("-------------------", code_len)
-                if code_len <= BASE:
-                    return api.fail(0,
-                                    "Your code is correct, but this is too long ({}) for any points".format(code_len))
+                if code_len >= BASE:
+                    message = "Your code is correct, but this is too long ({}) for any points".format(code_len)
+                    self.current_test["inspector_result_addon"] = message
+                    self.current_test["inspector_fail"] = True
+                    api.request_write_ext(self.current_test)
+                    return api.fail(0, message)
                 else:
                     api.success(BASE - code_len)
 
