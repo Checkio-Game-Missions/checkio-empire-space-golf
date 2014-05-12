@@ -1,9 +1,15 @@
 <p>
-    <i>( Describe task in general )</i>
+    Our RoboTrio wants to play golf, but they are too precious and can shot any hole without problem.
+    Thus they changed rules. You should write a function and make it as short as possible.
+    The shorter code -- more points.
 </p>
 
 <p>
-    Sum two passed ints
+    There are 9 (nine) holes on the square field with size 10x10 units.
+    You are given coordinates of the holes.
+    For the winning you should find the shortest way through all holes and your function must return the length of this way.
+    You are start in the point (0, 0) and can finish in any hole.
+    The result will be checked with &plusmn;0.01 precision.
 </p>
 
 <p style="text-align: center;">
@@ -11,29 +17,41 @@
     <img class="for_editor_only" title="example" src="{{MEDIA}}example.png" alt="example" width="380px"/>
 </p>
 
-<p><i>( Explain input and output values )</i></p>
 <p>
-    <strong>Input: </strong> Two arguments. Both are int
+    In this mission points that you get are dynamic and related with the length of your code.
+    We count all characters. XXX characters is the required minimum.
+    For each character minus from basis you will get 1 point. For example for YYY characters in code you will get XXX - YYY points.
+        </p>
+
+<p>
+    <strong>Input: </strong> A set of hole coordinates. Each hole coordinates are represented as a tuple of integers.
 </p>
 
 <p>
-    <strong>Output: </strong> Int. 
+    <strong>Output: </strong> The length of the shortest path as a float.
 </p>
 
 
 
 <div class="for_info_only">
-    <p><i>( Put some usage examples )</i></p>
     <p>
         <strong>Example:</strong>
     </p>
     <pre class="brush: python">
-checkio(3, 2) == 5
-checkio(5, 7) == 12
+golf({(1, 1), (1, 5), (1, 9),
+      (5, 9), (9, 9), (9, 5),
+      (9, 1), (5, 1), (5, 5)}) == 33.47
     </pre>
 </div>
 
 <p class="for_info_only">
     <strong>How it is used: </strong>
-    <i>(Here you can explain how it can be used in development and what is usage of this.)</i>
+</p>
+
+
+<p>
+    <strong>Precondition:</strong>
+    len(holes) == 9<br>
+    all(0 &lt; x &lt; 10 and 0 &lt; y &lt; 10 for x, y in holes) == True<br>
+    <!--all(isinstance(x, int) and isinstance(y, int) for x, y in holes) == True<br>-->
 </p>
