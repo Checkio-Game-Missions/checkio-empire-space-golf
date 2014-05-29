@@ -40,7 +40,7 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
                 return false;
             }
 
-            var checkioInput = data.in;
+            var checkioInput = data.in || [[1, 1], [1, 9], [9, 9], [9, 1], [5, 5]];
             var checkioInputStr = ' checkio(' + JSON.stringify(checkioInput)  + ')';
 
             var failError = function(dError) {
