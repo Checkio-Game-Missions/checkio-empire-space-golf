@@ -28,7 +28,6 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
         });
 
         ext.set_animate_success_slide(function (this_e, options) {
-            console.log(options);
             var ends = ["th", "st", "nd", "th", "th", "th", "th", "th", "th", "th"]
 
             options = options || {};
@@ -56,7 +55,7 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
             else {
                  $resultDiv.addClass("norm-sign");
                 $resultDiv.append($("<div></div>").text("Your results"));
-                var $tr = $("<tr></tr>");
+                $tr = $("<tr></tr>");
                 $tr.append($("<th></th>").text(current_points));
                 $tr.append($("<th></th>").text(best_points));
                 $tr.append($("<th></th>").text(place_rating).append($("<span></span>").addClass(".ends").text(ends[Number(place_rating[place_rating.length - 1])])));
