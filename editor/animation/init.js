@@ -53,7 +53,7 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
                 $table.append($tr);
             }
             else {
-                 $resultDiv.addClass("norm-sign");
+                $resultDiv.addClass("norm-sign");
                 $resultDiv.append($("<div></div>").text("Your results"));
                 $tr = $("<tr></tr>");
                 $tr.append($("<th></th>").text(current_points));
@@ -108,7 +108,7 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
                 return false;
             }
 
-            var rightResult = data.ext["answer"];
+            var rightResult = data.ext["show"];
             var userResult = data.out;
             var result = data.ext["result"];
             var result_addon = data.ext["result_addon"];
@@ -159,26 +159,28 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
 //            });
 //        });
 
-        var colorOrange4 = "#F0801A";
-        var colorOrange3 = "#FA8F00";
-        var colorOrange2 = "#FAA600";
-        var colorOrange1 = "#FABA00";
+        function GolfField(options) {
+            var colorOrange4 = "#F0801A";
+            var colorOrange3 = "#FA8F00";
+            var colorOrange2 = "#FAA600";
+            var colorOrange1 = "#FABA00";
 
-        var colorBlue4 = "#294270";
-        var colorBlue3 = "#006CA9";
-        var colorBlue2 = "#65A1CF";
-        var colorBlue1 = "#8FC7ED";
+            var colorBlue4 = "#294270";
+            var colorBlue3 = "#006CA9";
+            var colorBlue2 = "#65A1CF";
+            var colorBlue1 = "#8FC7ED";
 
-        var colorGrey4 = "#737370";
-        var colorGrey3 = "#9D9E9E";
-        var colorGrey2 = "#C5C6C6";
-        var colorGrey1 = "#EBEDED";
+            var colorGrey4 = "#737370";
+            var colorGrey3 = "#9D9E9E";
+            var colorGrey2 = "#C5C6C6";
+            var colorGrey1 = "#EBEDED";
 
-        var colorWhite = "#FFFFFF";
-        //Your Additional functions or objects inside scope
-        //
-        //
-        //
+            var colorWhite = "#FFFFFF";
+
+            options = options || {};
+
+
+        }
 
 
     }
