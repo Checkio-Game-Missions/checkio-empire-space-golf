@@ -38,17 +38,19 @@
     </p>
     <pre class="brush: python">
 golf({(2, 2), (2, 8), (8, 8), (8, 2), (5, 5)}) == 23.31
+golf({(2, 2), (4, 4), (6, 6), (8, 8), (9, 9)}) == 12.73
     </pre>
 </div>
 
 <p class="for_info_only">
     <strong>How it is used: </strong>
+
 </p>
 
 
 <p>
     <strong>Precondition:</strong>
-    len(holes) == 9<br>
-    all(0 &lt; x &lt; 10 and 0 &lt; y &lt; 10 for x, y in holes) == True<br>
+    len(holes) == 5<br>
+    all(0 &lt; x &lt; 10 and 0 &lt; y &lt; 10 for x, y in holes)<br>
     <!--all(isinstance(x, int) and isinstance(y, int) for x, y in holes) == True<br>-->
 </p>
