@@ -36,7 +36,6 @@ class CheckioRefereeGolf(CheckiOReferee):
                 self.restart_env()
             else:
                 code_len = len(self.code)
-                print("-------------------", code_len)
                 if code_len >= BASE:
                     message = "Your code is correct, but this is too long ({}) for any points".format(code_len)
                     self.current_test["inspector_result_addon"] = message

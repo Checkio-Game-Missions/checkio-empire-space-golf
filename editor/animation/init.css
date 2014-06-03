@@ -58,14 +58,14 @@
     position: relative;
     top: 80px;
     left: 0px;
-    color: #58bced;
+    color: #55bbee;
 }
 
 .animation-success div.result.win-sign .numbers {
     position: relative;
     top: 53px;
     left: 17px;
-    color: #58bced;
+    color: #55bbee;
 }
 
 
@@ -79,7 +79,7 @@
 .animation-success div.result .numbers td {
     font-size: 10px;
     text-align: center;
-    color: #294270;
+    color: #003b70;
 }
 
 .animation-success div.result .numbers tr th span.ends {
