@@ -85,7 +85,11 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
                 [9, 1],
                 [5, 5]
             ];
-            var checkioInputStr = ' checkio(' + JSON.stringify(checkioInput) + ')';
+
+            var funcName = "golf";
+
+            var checkioInputStr = funcName + '(' +
+                JSON.stringify(checkioInput).replace("[[", "{[").replace("]]", "]}").replace(/\[/g, "(").replace(/\]/g, ")") + ')';
 
             var failError = function (dError) {
                 $content.find('.call').html('Fail: ' + checkioInputStr);
