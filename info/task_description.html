@@ -1,27 +1,27 @@
 <p>
     Our RoboTrio wants to play golf, but they are too precious and can shot any hole without problem.
-    Thus they changed rules. You should write a function and make it as short as possible.
-    The shorter code -- more points.
+    Thus they changed rules. Now you need pass through all hole in any order.
 </p>
 
 <p>
     There are 5 (five) holes on the square field with size 10x10 units.
     You are given coordinates of the holes.
-    For the winning you should find the shortest way through all holes and your function must return the length of this way.
+    For the winning you should find the shortest way through all holes and your function must return the length of this
+    way.
     You are start in the point (0, 0) and can finish in any hole.
     The result will be checked with &plusmn;0.01 precision.
 </p>
 
 <p style="text-align: center;">
-    <img class="for_info_only" title="example" src="{{MEDIA}}example.png" alt="example" width="392px"/>
-    <img class="for_editor_only" title="example" src="{{MEDIA}}example.png" alt="example" width="380px"/>
+    <img title="golf" src="{{MEDIA}}golf.png" alt="golf" width="360px"/>
 </p>
-
 <p>
-    In this mission points that you get are dynamic and related with the length of your code.
-    We count all characters. XXX characters is the required minimum.
-    For each character minus from basis you will get 1 point. For example for YYY characters in code you will get XXX - YYY points.
-        </p>
+    In this mission the main goal to make your code as short as possible.
+    The shorter code -- more points.
+    The points for this mission that you get are dynamic and related with the length of your code.
+    We count all characters. 350 characters is the maximum and it's zero points.
+    For each character minus from basis you will get 1 point. For example for 300 characters in code you will get 50 points.
+</p>
 
 <p>
     <strong>Input: </strong> A set of hole coordinates. Each hole coordinates are represented as a tuple of integers.
@@ -32,14 +32,12 @@
 </p>
 
 
-
 <div class="for_info_only">
     <p>
         <strong>Example:</strong>
     </p>
     <pre class="brush: python">
-golf({(1, 1), (1, 9),
-      (9, 9), (9, 1), (5, 5)}) == 28.73
+golf({(2, 2), (2, 8), (8, 8), (8, 2), (5, 5)}) == 23.31
     </pre>
 </div>
 
