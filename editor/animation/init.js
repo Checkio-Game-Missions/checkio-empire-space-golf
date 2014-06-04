@@ -136,13 +136,11 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
             }
             //Dont change the code before it
 
-            //Your code here about test explanation animation
-            //$content.find(".explanation").html("Something text for example");
-            //
-            //
-            //
-            //
-            //
+            if (explanation) {
+                var canvas = new GolfField();
+                canvas.prepare($content.find(".explanation")[0], explanation);
+                canvas.lines(explanation);
+            }
 
 
             this_e.setAnimationHeight($content.height() + 60);
@@ -182,6 +180,67 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
             var colorWhite = "#FFFFFF";
 
             options = options || {};
+
+            var format = Raphael.format;
+
+            var padding = options.padding || 10;
+
+            var cell = options.cell || 30;
+
+            var size = padding + cell * 11;
+
+            var x0 = cell;
+            var y0 = size - cell;
+
+
+            var attrAxis = {"stroke": colorBlue4, "stroke-width": 3, "arrow-end": "classic"};
+            var attrLine = {"stroke": colorOrange4, "stroke-width": 3};
+            var attrHole = {"stroke": colorBlue4, "fill": colorBlue1, "stroke-width": 2};
+            var attrNumber = {"stroke": colorBlue4, "font-family": "Roboto, Arial, 'Open Sans', sans-serif", "font-size": cell * 0.6};
+
+            var paper;
+            var holeSet;
+            var stepTime = 500;
+
+            this.prepare = function (dom, holes) {
+                paper = Raphael(dom, size, size);
+                holeSet = paper.set();
+
+                paper.path(format("M{0},{1}V{2}", x0, size - cell / 2, padding)).attr(attrAxis);
+                paper.path(format("M{0},{1}H{2}", cell / 2, y0, size - padding)).attr(attrAxis);
+
+                paper.text(x0 - cell / 2, y0 + cell / 2, "0").attr(attrNumber);
+                paper.text(x0 + cell, y0 + cell / 2, "1").attr(attrNumber);
+                paper.text(x0 + cell * 9, y0 + cell / 2, "9").attr(attrNumber);
+                paper.text(x0 - cell / 2, y0 - cell, "1").attr(attrNumber);
+                paper.text(x0 - cell / 2, y0 - cell * 9, "9").attr(attrNumber);
+
+                for (var i = 0; i < holes.length; i++) {
+                    var c = paper.circle(x0 + cell * holes[i][0], y0 - cell * holes[i][1], cell / 3);
+                    c.attr(attrHole);
+                    holeSet.push(c);
+                }
+            };
+
+            this.lines = function (holes) {
+                var prev = [0, 0];
+                var i = 0;
+                (function drawLines() {
+                    if (i >= holes.length) {
+                        return false;
+                    }
+                    var end = holes[i];
+                    var p = paper.path(format("M{0},{1}L{0},{1}", x0 + cell * prev[0], y0 - cell * prev[1])).attr(attrLine);
+                    p.toBack();
+                    var newPath = format("M{0},{1}L{2},{3}",
+                        x0 + cell * prev[0], y0 - cell * prev[1],
+                        x0 + cell * holes[i][0], y0 - cell * holes[i][1]
+                    );
+                    prev = holes[i].slice();
+                    i++;
+                    p.animate({"path": newPath}, stepTime, callback = drawLines);
+                })();
+            }
 
 
         }
