@@ -12,7 +12,7 @@ cover = """def cover(f, data):
 api.add_listener(
     ON_CONNECT,
     CheckioRefereeGolf(
-        max_length=350,
+        max_length=400,
         tests=TESTS,
         cover_code={
             'python-27': cover,
