@@ -1,9 +1,14 @@
-BASE = 350
-
 from checkio.referees.io import CheckiOReferee
+from checkio import api
+
 
 
 class CheckioRefereeGolf(CheckiOReferee):
+
+    def __init__(self, max_length, **kwargs):
+        self.max_length = max_length
+        super().__init__(**kwargs)
+
     def check_current_test(self, data):
         if self.inspector:
             inspector_result, inspector_result_addon = self.inspector(self.code, self.runner)
@@ -30,7 +35,7 @@ class CheckioRefereeGolf(CheckiOReferee):
                 self.restart_env()
             else:
                 code_len = len(self.code)
-                if code_len >= BASE:
+                if code_len >= self.max_length:
                     message = "Your code is correct, but this is too long ({}) for any points".format(code_len)
                     self.current_test["inspector_result_addon"] = message
                     self.current_test["inspector_fail"] = True

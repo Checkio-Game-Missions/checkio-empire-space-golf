@@ -1,7 +1,7 @@
 from checkio.signals import ON_CONNECT
 from checkio import api
 from checkio.referees import checkers
-from golfReferee import CheckioRefereeGolf
+from golf import CheckioRefereeGolf
 
 from tests import TESTS
 
@@ -12,6 +12,7 @@ cover = """def cover(f, data):
 api.add_listener(
     ON_CONNECT,
     CheckioRefereeGolf(
+        max_length=350,
         tests=TESTS,
         cover_code={
             'python-27': cover,
