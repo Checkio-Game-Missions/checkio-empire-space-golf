@@ -28,7 +28,7 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
         });
 
         ext.set_animate_success_slide(function (this_e, options) {
-            var ends = ["th", "st", "nd", "th", "th", "th", "th", "th", "th", "th"]
+            var ends = ["th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th"]
 
             options = options || {};
             var is_new_record = options.is_new_record || false;
