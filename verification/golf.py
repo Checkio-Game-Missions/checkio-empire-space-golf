@@ -42,4 +42,4 @@ class CheckioRefereeGolf(CheckiOReferee):
                     api.request_write_ext(self.current_test)
                     return api.fail(0, message)
                 else:
-                    api.success(BASE - code_len)
+                    api.success(self.max_length - code_len)
