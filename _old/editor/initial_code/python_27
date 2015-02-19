@@ -1,0 +1,2 @@
+def golf(holes):
+    return 0
