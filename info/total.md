@@ -1,5 +1,5 @@
-Do you know how to play a golf with a mobile mortar and robot team?
-Yeah, robots are very accurate, sp this game is too deterministic, but fun.
+Have you ever tried to play a golf with a mobile mortar and our robot team?
+Yeah, the robots are very accurate, so this game can be fairly deterministic, but it's still fun.
 
 There are 5 (five) holes on the square field with size 10x10 units.
 You are given coordinates of the holes.
