@@ -9,6 +9,3 @@ The result will be checked with &plusmn;0.01 precision.
 In this mission the main goal to make your code as short as possible.
 The shorter your code, the more points you earn.
 Your score for this mission is dynamic and directly related to the length of your code.
-For reference, scoring is based on the number of characters used.
-350 characters is the maximum allowable and it will earn you zero points.
-For each character less than 350, you earn 1 point. For example for 300 character long code earns you 50 points.
