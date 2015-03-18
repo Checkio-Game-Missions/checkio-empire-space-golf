@@ -9,9 +9,13 @@ cover = """def cover(func, data):
 """
 
 
+def py_repr(f, data):
+    return "{}({})".format(f, set(tuple(x) for x in data))
+
+
 class Referee(RefereeCodeGolf):
     TESTS = TESTS
-    DEFAULT_LENGTH = 200
+    DEFAULT_MAX_CODE_LENGTH = 200
     BASE_POINTS = 15
     EXECUTABLE_PATH = settings.EXECUTABLE_PATH
     CURRENT_ENV = settings_env.CURRENT_ENV
@@ -19,5 +23,10 @@ class Referee(RefereeCodeGolf):
     ENV_COVERCODE = {
         "python_2": cover,
         "python_3": cover,
+        "javascript": None
+    }
+    CALLED_REPRESENTATIONS = {
+        "python_2": py_repr,
+        "python_3": py_repr,
         "javascript": None
     }
