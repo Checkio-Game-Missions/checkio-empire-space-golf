@@ -19,5 +19,5 @@ api.add_listener(
             'python-3': cover
         },
         checker=checkers.float_comparison(2),
-        function_name="golf"
+        DEFAULT_FUNCTION_NAME="golf"
     ).on_ready)
