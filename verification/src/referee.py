@@ -1,6 +1,6 @@
 from checkio_referee import RefereeCodeGolf
 
-import settings
+
 import settings_env
 from tests import TESTS
 
