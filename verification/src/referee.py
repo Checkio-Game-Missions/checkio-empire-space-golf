@@ -15,8 +15,8 @@ def py_repr(f, data):
 
 class Referee(RefereeCodeGolf):
     TESTS = TESTS
-    DEFAULT_MAX_CODE_LENGTH = 200
-    BASE_POINTS = 15
+    DEFAULT_MAX_CODE_LENGTH = 250
+    BASE_POINTS = 10
     ENVIRONMENTS = settings_env.ENVIRONMENTS
 
     DEFAULT_FUNCTION_NAME = "golf"
