@@ -9,8 +9,9 @@ cover = """def cover(func, data):
 """
 
 
-def py_repr(f, data):
-    return "{}({})".format(f, set(tuple(x) for x in data))
+def py_repr(data, f):
+    print(data)
+    return "{}({})".format(f, set(tuple(x) for x in data["input"]))
 
 
 class Referee(RefereeCodeGolf):
