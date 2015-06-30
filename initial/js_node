@@ -1,0 +1,17 @@
+"use strict";
+
+function golf(holes) {
+    return 0;
+}
+//
+//var assert = require("assert");
+//
+//if (!global.is_checking) {
+//    var almostEqual = function (actual, expected, significantDigits) {
+//        significantDigits = significantDigits || 2;
+//        var precision = Math.pow(0.1, significantDigits);
+//        return Math.abs(expected - actual) < precision;
+//    };
+//    assert(almostEqual(golf([[2, 2], [2, 8], [8, 8], [8, 2], [5, 5]]), 23.31), "First");
+//    assert(almostEqual(golf([[2, 2], [4, 4], [6, 6], [8, 8], [9, 9]]), 12.73), "Second");
+//}

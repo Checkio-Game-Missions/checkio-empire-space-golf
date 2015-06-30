@@ -1,5 +1,5 @@
 **Precondition:**
-```python
-len(holes) == 5
-all(0 < x < 10 and 0 < y < 10 for x, y in holes)
-```
+
+`|holes| = 5`
+
+`∀ x, y ∈ array: 0 < x < 10 AND 0 < y < 10`

@@ -1,4 +1,4 @@
-from checkio_referee import RefereeCodeGolf, validators
+from checkio_referee import RefereeCodeGolf, validators, ENV_NAME
 
 
 import settings_env
@@ -24,12 +24,8 @@ class Referee(RefereeCodeGolf):
     VALIDATOR = Validator
     DEFAULT_FUNCTION_NAME = "golf"
     ENV_COVERCODE = {
-        "python_2": cover,
-        "python_3": cover,
-        "javascript": None
+        ENV_NAME.PYTHON: cover,
     }
     CALLED_REPRESENTATIONS = {
-        "python_2": py_repr,
-        "python_3": py_repr,
-        "javascript": None
+        ENV_NAME.PYTHON: py_repr,
     }
