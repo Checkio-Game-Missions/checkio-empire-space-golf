@@ -14,4 +14,5 @@ function golf(holes) {
 //    };
 //    assert(almostEqual(golf([[2, 2], [2, 8], [8, 8], [8, 2], [5, 5]]), 23.31), "First");
 //    assert(almostEqual(golf([[2, 2], [4, 4], [6, 6], [8, 8], [9, 9]]), 12.73), "Second");
+//    console.log("Use 'Check' to earn sweet rewards!");
 //}
